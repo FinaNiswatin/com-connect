@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Community Connect - Dashboard</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <style>
+    body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f0f0;
+    }
+    
+    .full-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .dashboard {
+      text-align: center;
+      color: #333;
+    }
+    
+    .dashboard h1 {
+      margin-bottom: 20px;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 2s steps(40, end);
+      color: #15919a;
+    }
+    
+    .dashboard h1::after {
+      content: "|";
+      animation: blink 0.75s infinite;
+    }
+    
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+    
+    @keyframes blink {
+      60% {
+        opacity: 0;
+      }
+    }
+    
+    .dashboard .card {
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: #c5d3d0;
+    }
+    
+    .dashboard .card p {
+      color: #666;
+      margin-bottom: 10px;
+    }
+    
+    .dashboard .card a {
+      color: #26b3e3;
+      text-decoration: none;
+    }
+    
+    .dashboard .card a:hover {
+      text-decoration: underline;
+    }
+
+    /* CSS for toggle list */
+    .toggle-list {
+      display: none;
+      padding: 20px;
+    }
+
+    /* CSS for role options */
+    .role-option {
+      margin-bottom: 10px;
+      padding: 10px 20px;
+      background-color: #26d9e3;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .role-option:hover {
+      background-color: #15919a;
+    }
+
+    .profile-link {
+      padding: 10px 20px;
+      background-color: #15919a;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .profile-link:hover {
+      background-color: #15919a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header section -->
+  <header>
+    <h1>Community Connect - Dashboard</h1>
+  </header>
+  <!-- End Header section -->
+
+  <!-- Main content section -->
+  <div class="full-page">
+    <div class="content">
+      <div class="dashboard">
+        <div class="card">
+          <h1>Welcome, Fina Niswatin Nikmah!</h1>
+          <p>This is your dashboard where you can manage your profile and projects.</p>
+          <button class="profile-link">Choose Your Role</button>
+          <div class="toggle-list">
+            <button class="role-option" data-role="user">User</button>
+            <button class="role-option" data-role="admin">Admin</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Main content section -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- JavaScript for toggle list -->
+  <script>
+    $(document).ready(function() {
+      $(".profile-link").click(function() {
+        $(".toggle-list").toggle();
+      });
+
+      $(".role-option").click(function() {
+        var role = $(this).data("role");
+        if (role === "admin") {
+          var password = prompt("Enter admin password:");
+          // Here you can add logic to check the admin password
+          // For demonstration purpose, let's assume password is "admin123"
+          if (password === "admin123") {
+            window.location.href = "dashboard_admin.html"; // Change this URL to your admin dashboard URL
+          } else {
+            alert("Incorrect password!");
+          }
+        } else {
+          window.location.href = "dashboard.html"; // Change this URL to your user dashboard URL
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
